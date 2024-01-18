@@ -1,0 +1,14 @@
+### GET
+GET http://localhost:4004/v2/odata/v4/media/MediaManagement
+
+
+### POST
+POST http://localhost:4004/v2/odata/v4/media/MediaManagement HTTP/1.1
+Content-Type: application/pdf
+Authorization: Basic drvrdevireddy@gmail.com:
+slug: invoice_oneplus.pdf
+
+< ./invoice-oneplus.pdf
+
+### DELETE
+DELETE http://localhost:4004/v2/odata/v4/media/MediaManagement/bffdf4c3-8870-4151-81a2-0b05e06a91e3

@@ -1,0 +1,45 @@
+{
+  "name": "media_management",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "@sap/cds-hana": "^2",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/hana-client": "^2.19.21",
+    "@sap/xssec": "^3",
+    "express": "^4",
+    "passport": "^0"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/hdi-deploy": "4.9.2"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "deploy": "cf deploy mta_archives/media_management_1.0.0.mtar -f"
+  },
+  "cds": {
+    "requires": {
+      "db": "hana",
+      "auth": {
+        "[development]": {
+          "kind": "mocked",
+          "users": {
+            "drvrdevireddy@gmail.com": {}
+          }
+        },
+        "[production]": {
+          "kind": "xsuaa"
+        }
+      }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    }
+  }
+}
